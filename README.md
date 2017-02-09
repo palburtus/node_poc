@@ -112,6 +112,7 @@ router.get("/",function(req,res){
 /*Add instructions to serve up your webpage*/
 app.use("/",router);
 
+/*Start webserver*/
 app.listen(3000,function(){
   console.log("Live at Port 3000");
 });
@@ -202,18 +203,32 @@ The `{{{body}}` will contain the markup in your inherited files.
 We need to modify the server.js file to use the handlebars engine instead of the express router.  Replace the server.js code with the following.
 
 ```
+/*load the express dependency */ 
 var express = require('express');
+/*load the express handlebar dependency */ 
 var exphbs  = require('express-handlebars');
 
+/*configure app to use handlebars template */ 
 var app = express();
-
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-app.get('/', function (req, res) {
+/*create a basic router configuration*/
+var router = express.Router();
+router.use(function (req,res,next) {
+  console.log("/" + req.method);
+  next();
+});
+
+/*Set the defaul webpage now using handlebars*/ 
+router.get('/', function (req, res) {
     res.render('index');
 });
 
+/*Add instructions to serve up your webpage*/
+app.use("/",router);
+
+/*Start webserver*/
 app.listen(3000, function () {
     console.log('express-handlebars example server listening on: 3000');
 });
