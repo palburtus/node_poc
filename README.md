@@ -136,3 +136,5 @@ Open a web browser to the to `http://localhost:3000`
 
 Your browser should display the following.
 
+![Index Screenshot](https://github.com/palburtus/node_poc/blob/master/hello_node_js.png)
+
