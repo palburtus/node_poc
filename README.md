@@ -221,3 +221,29 @@ app.listen(3000, function () {
 
 Finally rename `index.html` to `index.handlebars`
 
+Your project directory should now look like the following.
+
+```
+node_poc
+│   server.js    
+│   package.json
+└───node_modules
+│   │   express
+|   |   express-handlebars
+└───views
+    │   index.handlebars
+    └───layouts
+        |   main.handlebars
+    
+```
+Launch your webserver by entering the following command from your projects root.
+
+```
+npm start
+```
+
+Open a web browser to the to `http://localhost:3000`
+
+Your browser should now display the following.
+
+![Index Screenshot](https://github.com/palburtus/node_poc/blob/master/hello_node_js.png)
