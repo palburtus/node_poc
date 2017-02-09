@@ -138,3 +138,10 @@ Your browser should display the following.
 
 ![Index Screenshot](https://github.com/palburtus/node_poc/blob/master/hello_node_js.png)
 
+#Section 2: Templating
+
+For even the most basic web applications you will want to use some version of templating in order to avoid adding the same HTML that will appear on multiple pages.  For those farmilar with MVC master pages, this is the same concept.  You create a "master" containing common components, such as nav, footers, etc, and have other pages inherit this template.  
+
+While there are several frameworks available for node developers that acomplish templating, for beginners, Express Handlerbars is a good starting point and easy to tackle.  
+
+
