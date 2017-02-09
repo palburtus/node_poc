@@ -59,13 +59,27 @@ The views directory will contain all of the web pages that will be available fro
 
 ##index.html
 
-Create file index.html in the root of your views directory.
+Create file index.html in the root of your views directory. 
 
 ```
 touch views/index.html
 ```
 
 index.html will be the default webpage that is shown when you run your webserver.
+
+Add the following HTML markup to index.html
+
+```
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello NodeJS</title>
+</head>
+<body>
+    <p>Hello NodeJS</p>
+</body>
+```
 
 ##Server.js
 Create a file named server.js using the following command
