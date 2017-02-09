@@ -1,4 +1,4 @@
-# Node JS POC Project
+# NodeJS POC Project
 A NodeJS project designed to learn the ins and outs of NodeJS.
 
 This project will be used to learn NodeJS.  Target audience is developers who have used other Web Development frameworks, namely .NET MVC / API v2.
