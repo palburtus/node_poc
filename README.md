@@ -246,4 +246,4 @@ Open a web browser to the to `http://localhost:3000`
 
 Your browser should now display the following.
 
-![Index Screenshot](https://github.com/palburtus/node_poc/blob/master/hello_node_js.png)
+![Index with Template Screenshot](https://github.com/palburtus/node_poc/blob/master/hellohandlebars.png?raw=true)
