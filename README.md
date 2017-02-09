@@ -7,6 +7,12 @@ This project will grow in complexity as new techniques are incorporated.  The id
 
 This project will also serve to document each step, no matter how trivial, during the setup process.
 
+#1 Hello Node (The most basic of basic web applications) 
+
+__Note__ most of this "Hello Node" portion of this project is based on dumbed-down version of of _Ben Gourley's_ tutorial.  
+[A Simple Website in Node.js – 2016 Edition](http://www.clock.co.uk/blog/a-simple-website-in-node-js-2016-edition).  
+Much of this section is simply over explaining steps that are already outlined in his tutorial.
+
 ## Project Initialization
 The first step is to create a root directory, we'll call it 'node_poc' for now, and to cd into that directory.
 
@@ -36,7 +42,7 @@ Add the express dependencies by entering the following command from the projects
 npm i --save express@4
 ```
 
-_A note on the paramaters_
+__A note on the paramaters__
 THe `i` paramater installs the target package to a newly created folder _node_modules_ which will contain all of your future dependencies.  
 
 The `--save` paramater adds this dependency to your packages.json file's dependencies section.  
