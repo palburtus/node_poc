@@ -44,6 +44,6 @@ npm i --save express@4
 ```
 
 __A note on the paramaters__
-THe `i` paramater installs the target package to a newly created folder _node_modules_ which will contain all of your future dependencies.  
+The `i` paramater installs the target package to a newly created folder _node_modules_ which will contain all of your future dependencies.  
 
 The `--save` paramater adds this dependency to your packages.json file's dependencies section.  
