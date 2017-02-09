@@ -7,11 +7,11 @@ This project will grow in complexity as new techniques are incorporated.  The id
 
 This project will also serve to document each step, no matter how trivial, during the setup process.
 
-#1 Hello Node (The most basic of basic web applications) 
+#Section 1: Hello Node (The most basic of basic web applications) 
 
 __Note__ most of this "Hello Node" portion of this project is based on dumbed-down version of of _Ben Gourley's_ tutorial.  
 [A Simple Website in Node.js – 2016 Edition](http://www.clock.co.uk/blog/a-simple-website-in-node-js-2016-edition).  
-Much of this section is simply over explaining steps that are already outlined in his tutorial.
+Much of __Section 1__ is simply over explaining steps that are already outlined in his tutorial.
 
 ## Project Initialization
 The first step is to create a root directory, we'll call it 'node_poc' for now, and to cd into that directory.
