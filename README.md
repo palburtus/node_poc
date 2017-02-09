@@ -199,6 +199,12 @@ Enter the following HTML into main.handlebars
 
 The `{{{body}}` will contain the markup in your inherited files.  
 
+Change your index.html to just contain the markup you want displayed in the `{{{body}}}` tag:
+
+```
+<p>Hello NodeJS</p>
+```
+
 ##Configure Server.js to use Express-Handlebars
 We need to modify the server.js file to use the handlebars engine instead of the express router.  Replace the server.js code with the following.
 
