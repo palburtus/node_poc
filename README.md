@@ -142,6 +142,56 @@ Your browser should display the following.
 
 For even the most basic web applications you will want to use some version of templating in order to avoid adding the same HTML that will appear on multiple pages.  For those farmilar with MVC master pages, this is the same concept.  You create a "master" containing common components, such as nav, footers, etc, and have other pages inherit this template.  
 
-While there are several frameworks available for node developers that acomplish templating, for beginners, Express Handlerbars is a good starting point and easy to tackle.  
 
+We will be changing some of the file names that were created in Section 1, so just to recap as of right now your directory structure
+should look something like this.
+
+```
+node_poc
+│   server.js    
+│   package.json
+└───node_modules
+│   │   express
+└───views
+    │   index.html
+```
+
+While there are several frameworks available for node developers, Jade being an example of a popular one, that acomplish templating, for beginners, Express Handlerbars is a good starting point and easy to tackle.
+
+The github page for the express-handlebars project can be found [here](https://github.com/ericf/express-handlebars)
+
+From the root folder of your application run the following command:
+
+```
+npm install express-handlebars
+```
+
+Our first step is to create a directory that will contain all of our layouts (for now this will just contain our main layout).
+
+Create this file by running the following commands from the root folder of your project
+
+```
+cd views
+mkdir layouts
+cd layouts
+touch main.handlebars
+```
+This 'main.handlebars' file will become the template from which other files will inherit markup form.  
+
+Enter the following HTML into main.handlebars
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Example App</title>
+</head>
+<body>
+
+    {{{body}}}
+
+</body>
+</html>
+```
 
