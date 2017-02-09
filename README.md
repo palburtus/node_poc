@@ -156,6 +156,7 @@ node_poc
     │   index.html
 ```
 
+##Install Express-Handlebars
 While there are several frameworks available for node developers, Jade being an example of a popular one, that acomplish templating, for beginners, Express Handlerbars is a good starting point and easy to tackle.
 
 The github page for the express-handlebars project can be found [here](https://github.com/ericf/express-handlebars)
@@ -165,7 +166,7 @@ From the root folder of your application run the following command:
 ```
 npm install express-handlebars
 ```
-
+##Create Main Template
 Our first step is to create a directory that will contain all of our layouts (for now this will just contain our main layout).
 
 Create this file by running the following commands from the root folder of your project
@@ -188,10 +189,35 @@ Enter the following HTML into main.handlebars
     <title>Example App</title>
 </head>
 <body>
-
+    <h1>Sample App</h1>
     {{{body}}}
 
 </body>
 </html>
 ```
+
+The `{{{body}}` will contain the markup in your inherited files.  
+
+##Configure Server.js to use Express-Handlebars
+We need to modify the server.js file to use the handlebars engine instead of the express router.  Replace the server.js code with the following.
+
+```
+var express = require('express');
+var exphbs  = require('express-handlebars');
+
+var app = express();
+
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
+app.get('/', function (req, res) {
+    res.render('index');
+});
+
+app.listen(3000, function () {
+    console.log('express-handlebars example server listening on: 3000');
+});
+```
+
+Finally rename `index.html` to `index.handlebars`
 
