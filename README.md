@@ -90,13 +90,16 @@ router.use(function (req,res,next) {
   next();
 });
 
+/*Set the defaul webpage*/ 
 router.get("/",function(req,res){
   res.sendFile(path + "index.html");
 });
 
+/*Add instructions to serve up your webpage*/
 app.use("/",router);
 
 app.listen(3000,function(){
   console.log("Live at Port 3000");
 });
+
 ```
