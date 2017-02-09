@@ -136,7 +136,7 @@ Open a web browser to the to `http://localhost:3000`
 
 Your browser should display the following.
 
-![Index Screenshot](https://github.com/palburtus/node_poc/blob/master/hello_node_js.png)
+![Index Screenshot](https://github.com/palburtus/node_poc/blob/master/assets/hello_node_js.png)
 
 #Section 2: Templating
 
@@ -246,4 +246,4 @@ Open a web browser to the to `http://localhost:3000`
 
 Your browser should now display the following.
 
-![Index with Template Screenshot](https://github.com/palburtus/node_poc/blob/master/hellohandlebars.png?raw=true)
+![Index with Template Screenshot](https://github.com/palburtus/node_poc/blob/master/assets/hellohandlebars.png?raw=true)
