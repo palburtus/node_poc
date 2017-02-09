@@ -117,3 +117,22 @@ app.listen(3000,function(){
 });
 
 ```
+
+##Run Application
+
+Launch your webserver by entering the following command from your projects root.
+
+```
+npm start
+```
+
+If you succesfully followed these steps your console should ouput the following.
+
+```
+Live at Port 300
+```
+
+Open a web browser to the to `http://localhost:3000`
+
+Your browser should display the following.
+
