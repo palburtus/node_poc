@@ -16,3 +16,10 @@ cd node_poc
 ```
 
 Next we have to initialize node 
+
+```
+npm init
+```
+
+This command will promt you to fill out same basic info for your project, feel free to hit enter for each prompt to add default values.
+Since this is not a production application these details can be ommitted for now (You can always modify them later).
