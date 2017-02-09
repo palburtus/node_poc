@@ -46,4 +46,57 @@ npm i --save express@4
 __A note on the paramaters__
 The `i` paramater installs the target package to a newly created folder _node_modules_ which will contain all of your future dependencies.  
 
-The `--save` paramater adds this dependency to your packages.json file's dependencies section.  
+The `--save` paramater adds this dependency to your packages.json file's dependencies section.  This will allow you to use the command `nmp install` to install in any dependencies you have previously saved, without having to commit the files in `node_modules` to your repository. 
+
+##views directory
+Create a directory from the root of your application.
+
+````
+mkdir views
+```
+
+The views directory will contain all of the web pages that will be available from your server.
+
+##index.html
+
+Create file index.html in the root of your views directory.
+
+```
+touch views/index.html
+```
+
+index.html will be the default webpage that is shown when you run your webserver.
+
+##Server.js
+Create a file named server.js using the following command
+```
+touch server.js
+```
+
+This file will be the entry point for you web server. Adding the following code to create a simple web server to host your content.
+
+```
+/*load the express dependencies */ 
+var express = require("express");
+var app = express();
+var router = express.Router();
+
+/*set the root of your html files*/
+var path = __dirname + '/views/';
+
+/*create a basic router configuration*/
+router.use(function (req,res,next) {
+  console.log("/" + req.method);
+  next();
+});
+
+router.get("/",function(req,res){
+  res.sendFile(path + "index.html");
+});
+
+app.use("/",router);
+
+app.listen(3000,function(){
+  console.log("Live at Port 3000");
+});
+```
