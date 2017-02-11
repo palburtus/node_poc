@@ -268,3 +268,15 @@ Open a web browser to the to `http://localhost:3000`
 Your browser should now display the following.
 
 ![Index with Template Screenshot](https://github.com/palburtus/node_poc/blob/master/assets/hellohandlebars.png?raw=true)
+
+#Section 3: Adding a File Watcher
+At this point, any time you make a change to a file you need to restart the webserver in order to view it.  This is a real pain when you are developing.  Node provides an API that allows you server to watch for file changes, however rolling your own file watcher implementation can be a bit cumbersome.  Luckly there are a number of node modules out there that remedy this problem.  We will be using [nodemon](https://github.com/remy/nodemon).  
+
+##Installing nodemon
+From the root of your project run the following command.
+
+```
+npm install --save-dev nodemon
+```
+
+This will add nodemon to your node_modules directory.  Also note that we used the `--save-dev` paramater instead of just `--save`.  This is because nodemon is a tool used for development and should not be included in your production configuration.  We will cover configuration management in a later section. 
