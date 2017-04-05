@@ -51,7 +51,7 @@ The `--save` paramater adds this dependency to your packages.json file's depende
 ##views directory
 Create a directory from the root of your application.
 
-````
+```
 mkdir views
 ```
 
