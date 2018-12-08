@@ -7,7 +7,7 @@ This project will grow in complexity as new techniques are incorporated.  The id
 
 This project will also serve to document each step, no matter how trivial, during the setup process.
 
-#Section 1: Hello Node (The most basic of basic web applications) 
+# Section 1: Hello Node (The most basic of basic web applications) 
 
 __Note__ most of this "Hello Node" portion of this project is based on dumbed-down version of of _Ben Gourley's_ tutorial.  
 [A Simple Website in Node.js – 2016 Edition](http://www.clock.co.uk/blog/a-simple-website-in-node-js-2016-edition).  
