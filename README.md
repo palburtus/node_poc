@@ -269,14 +269,36 @@ Your browser should now display the following.
 
 ![Index with Template Screenshot](https://github.com/palburtus/node_poc/blob/master/assets/hellohandlebars.png?raw=true)
 
-# Section 3: Adding a File Watcher
+# Section 3: Basic Dependencies 
+We mentioned at the beginning of this document that we would try to install as few dependcies as possible in the begining.  The main reason for this is that, especially for developers new to Node.js, the sheer number of npm modules can be overwhelming.  In addition, there are many popular modules that do the same things.  As a result, when trying to use node.js for the first time it can be difficult to know what node modules you should use vs what node modules you could use (i.e. we are using handlebars for scafolding and routing.  There other popular node modules that do what handlebars does that you can use).  This can become particularly difficult when following other developer's guides and tutorials as they may use different dependecies and assume the reader understands what each of them do.   
+
+With that in mind, from this point on we will start adding some additional dependencies.  Whenever one is added, we will try to explain exactly what we are using it for and (where applicable) make note of other popular alternatives to the module we decide to us.  The decision to install one module vs another when both modules offer the same functionality is often as simple as personal preference or developer familiarity, we are not suggesting that one 3rd party module is better or more popular than any alternatives.  
+
+### Installing a File Watcher (nodemon)
+
 At this point, any time you make a change to a file you need to restart the webserver in order to view it.  This is a real pain when you are developing.  Node provides an API that allows you server to watch for file changes, however rolling your own file watcher implementation can be a bit cumbersome.  Luckly there are a number of node modules out there that remedy this problem.  We will be using [nodemon](https://github.com/remy/nodemon).  
 
-## Installing nodemon
 From the root of your project run the following command.
 
 ```
 npm install --save-dev nodemon
 ```
 
-This will add nodemon to your node_modules directory.  Also note that we used the `--save-dev` paramater instead of just `--save`.  This is because nodemon is a tool used for development and should not be included in your production configuration.  We will cover configuration management in a later section. 
+This will add [nodemon](https://nodemon.io/) to your node_modules directory.  Also note that we used the `--save-dev` paramater instead of just `--save`.  This is because nodemon is a tool used for development and should not be included in your production configuration.  We will cover configuration management in a later section. 
+
+Some popular alternatives to nodemon include but are not limited to forever, node-supervisor, and node-dev.  
+
+### Install jQuery
+
+```
+npm install jquery
+```
+
+### Install Bootstrap
+
+__Note__ jquery is a dependency of bootstrap thus needs to be installed in order to use bootstrap.
+
+```
+npm install bootstrap
+```
+This will install the lastest version of Bootstrap (as of this last update of this document version 4.1.3.  Bootstrap is a popular, open-soure library maintaned by Twitter that provides some CSS and Javascript styles and components.  
