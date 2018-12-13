@@ -287,8 +287,16 @@ npm install --save-dev nodemon
 This will add [nodemon](https://nodemon.io/) to your node_modules directory.  Also note that we used the `--save-dev` paramater instead of just `--save`.  This is because nodemon is a tool used for development and should not be included in your production configuration.  We will cover configuration management in a later section. 
 
 Some popular alternatives to nodemon include but are not limited to forever, node-supervisor, and node-dev.  
- 
+
+### Install jQuery
+
+```
+npm install jquery
+```
+
 ### Install Bootstrap
+
+__Note__ jquery is a dependency of bootstrap thus needs to be installed in order to use bootstrap.
 
 ```
 npm install bootstrap
