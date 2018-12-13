@@ -57,7 +57,7 @@ mkdir views
 
 The views directory will contain all of the web pages that will be available from your server.
 
-##index.html
+## index.html
 
 Create file index.html in the root of your views directory. 
 
@@ -81,7 +81,7 @@ Add the following HTML markup to index.html
 </body>
 ```
 
-##Server.js
+## Server.js
 Create a file named server.js using the following command
 ```
 touch server.js
@@ -119,7 +119,7 @@ app.listen(3000,function(){
 
 ```
 
-##Run Application
+## Run Application
 
 Launch your webserver by entering the following command from your projects root.
 
@@ -139,7 +139,7 @@ Your browser should display the following.
 
 ![Index Screenshot](https://github.com/palburtus/node_poc/blob/master/assets/hello_node_js.png)
 
-#Section 2: Templating
+# Section 2: Templating
 
 For even the most basic web applications you will want to use some version of templating in order to avoid adding the same HTML that will appear on multiple pages.  For those farmilar with MVC master pages, this is the same concept.  You create a "master" containing common components, such as nav, footers, etc, and have other pages inherit this template.  
 
@@ -157,7 +157,7 @@ node_poc
     │   index.html
 ```
 
-##Install Express-Handlebars
+## Install Express-Handlebars
 While there are several frameworks available for node developers, Jade being an example of a popular one, that acomplish templating, for beginners, Express Handlerbars is a good starting point and easy to tackle.
 
 The github page for the express-handlebars project can be found [here](https://github.com/ericf/express-handlebars)
@@ -167,7 +167,7 @@ From the root folder of your application run the following command:
 ```
 npm install express-handlebars
 ```
-##Create Main Template
+## Create Main Template
 Our first step is to create a directory that will contain all of our layouts (for now this will just contain our main layout).
 
 Create this file by running the following commands from the root folder of your project
@@ -205,7 +205,7 @@ Change your index.html to just contain the markup you want displayed in the `{{{
 <p>Hello NodeJS</p>
 ```
 
-##Configure Server.js to use Express-Handlebars
+## Configure Server.js to use Express-Handlebars
 We need to modify the server.js file to use the handlebars engine instead of the express router.  Replace the server.js code with the following.
 
 ```
@@ -269,10 +269,10 @@ Your browser should now display the following.
 
 ![Index with Template Screenshot](https://github.com/palburtus/node_poc/blob/master/assets/hellohandlebars.png?raw=true)
 
-#Section 3: Adding a File Watcher
+# Section 3: Adding a File Watcher
 At this point, any time you make a change to a file you need to restart the webserver in order to view it.  This is a real pain when you are developing.  Node provides an API that allows you server to watch for file changes, however rolling your own file watcher implementation can be a bit cumbersome.  Luckly there are a number of node modules out there that remedy this problem.  We will be using [nodemon](https://github.com/remy/nodemon).  
 
-##Installing nodemon
+## Installing nodemon
 From the root of your project run the following command.
 
 ```
