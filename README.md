@@ -290,8 +290,45 @@ Some popular alternatives to nodemon include but are not limited to forever, nod
 
 ### Install jQuery
 
+Run the following command from your projects root directory
+
 ```
 npm install jquery
+```
+This command will save jquery in your node_modules folder.  However, jQuery will need to be deployed and servered by the webserver in order to be used and we don't want to serve it directly from node_modules.  Instead we will define where it the webserver should delpoy it in our server.js.
+
+Add the following code to your server.js
+
+```
+app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); 
+```
+Let's take a moment to disect this code to better understand what its purpose is.
+- The /js indicates that we want to server this file in a folder named 'js' from the web server root. 
+- The variable &#95;&#95;dirname is a static variable that points to the root of your project, you do not need to declare it.
+- '/node_modules/jquery/dist' is the location of your jQuery file on your file system.
+
+So on your file system your jquery file structure looks something like this...
+
+```
+node_poc
+│   server.js    
+│   package.json
+└───node_modules
+│   └───jquery
+│       └───dist
+│           └───jquery.js
+```
+
+...and your app.use statement will cause your jquery file structure on the webserver to look like this
+
+<web_server_root>
+└───js
+│   └───jquery.js
+
+You can now reference jquery in the <head> section of your "main.handlebars" file like so
+    
+```
+<script src="/js/jquery.js"></script>
 ```
 
 ### Install Bootstrap
