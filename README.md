@@ -302,6 +302,7 @@ Add the following code to your server.js
 ```
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); 
 ```
+
 Let's take a moment to disect this code to better understand what its purpose is.
 - The /js indicates that we want to server this file in a folder named 'js' from the web server root. 
 - The variable &#95;&#95;dirname is a static variable that points to the root of your project, you do not need to declare it.
@@ -321,9 +322,11 @@ node_poc
 
 ...and your app.use statement will cause your jquery file structure on the webserver to look like this
 
+```
 <web_server_root>
 └───js
 │   └───jquery.js
+```
 
 You can now reference jquery in the <head> section of your "main.handlebars" file like so
     
@@ -338,4 +341,84 @@ __Note__ jquery is a dependency of bootstrap thus needs to be installed in order
 ```
 npm install bootstrap
 ```
-This will install the lastest version of Bootstrap (as of this last update of this document version 4.1.3.  Bootstrap is a popular, open-soure library maintaned by Twitter that provides some CSS and Javascript styles and components.  
+
+This will install the lastest version of Bootstrap (as of this last update of this document version 4.1.3).  Bootstrap is a popular, open-soure library maintaned by Twitter that provides some CSS and Javascript styles and components.  We will drop in a sample navigation bare the utilizes bootstrap into this application in a bit.  
+
+You can now reference bootstrap dependencies much like we just did for jQuery, however bootstrap requires a .css file and a .js file and has a slightly different node_modules directory setup than jquery so we will have to make a few minor adjustments.  
+
+To further illustrate here is the current node_modules directory structure for jquery and bootstrap.
+
+```
+node_poc
+│   server.js    
+│   package.json
+└───node_modules
+│   └───jquery
+│       └───dist
+│           └───jquery.js
+└───bootstrap
+│       └───dist
+│           └───js
+│               └───bootstrap.js
+│           └───css
+│               └───bootstrap.css
+```
+
+First lets include the bootstrap javascript file.  We will serve this file in the same directory as the jquery.js file.  Include the following code in your server.js file right under hte "app.use" code for query
+
+```
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
+```
+
+Notice the first paramater 'js' is the same since we want to server this file in the same folder as jquery, however the second param ponits to a different folder and file -with a different file structure- than jquery.
+
+Next lets include the bootstrap css import right below the bootstrap js import in our server.js file.  
+
+```
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+```
+
+Notice the first paramater 'css' is different in this app.use statement.  This will cause the bootstrap file to be served under a 'css' folder from the webserver root.  The resulting file structure on the webserver should look like the following.  
+
+```
+<web_server_root>
+└───js
+│   └───jquery.js
+│   └───bootstrap.js
+└───css
+│   └───bootstrap.css
+```
+
+Finally we need to reference these two files that we are now serving up.  To do this, reference the files in the 'head' section of the HTML in your main.handlebars file.
+
+```
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/bootstrap.min.js"></script>
+```
+
+Now we can add a sample navigation bar provided by the bootstrap 4 documentation.  We will add only two links "Home" and "About" (we will use this links later to demonstrate setting up simple reqeust routing).  This should be added to your "main.handlebars" file right below the "body" tag.
+
+```
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">WebMD Mobile CMS</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/About">About</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+```
+
+You can serve any number files to the web server using app.use code the first paramater is the name of the folder you want the file to be served in the webserver, and the second paramter is the location of the the file in your node_modules directory.  
+
+# Section 4: Basic Routing
+
