@@ -3,7 +3,9 @@ var exphbs  = require('express-handlebars');
 
 var app = express();
 
-app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
+app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));   
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));                                                   
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
