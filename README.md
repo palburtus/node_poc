@@ -422,3 +422,33 @@ You can serve any number files to the web server using app.use code the first pa
 
 # Section 4: Basic Routing
 
+So far we have only one page on this app. Lets add an "About" page using basic express routing.
+
+Our first step is to create an about.handlebars page that will inheret the content on the main.handlebars but will render new content in the "body" section. 
+
+Under your "views" directory create a new file called "about.handlebars".
+
+Once we've created that page, for the sake of simplicity lets ad some simple HTML to this file.
+
+```
+<p>This is my about page</p>
+```
+
+Our content is now created but the user currently has no way to navtiate to that page, we need to create a route to that page in our server.js file. For this example let's say we want to be able to link to this page from localhost:3000/about 
+
+Add the following to the server.js 
+
+```
+app.get('/about', function (req, res) {
+    res.render('about');
+});
+```
+
+This instructs the server that whenever a GET HTTP call is made to /about, the contents of about.handlebars by putting "about" in the res.render param (you could name yoour handlebars filewhatever you want for example two.handlebars and serve this same page by substituting res.render(two)).
+
+ You can test this result by entering http://localhost:3000/about into your web browser or adding a link from your homepage to using 
+ 
+ ```
+ <a href="./about">About</a>
+ ```
+
