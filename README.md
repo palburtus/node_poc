@@ -1,7 +1,7 @@
 # NodeJS POC Project
-A NodeJS project designed to learn the ins and outs of NodeJS.
+A NodeJS project designed to learn the ins and outs of NodeJS.  It is an attempt to create a "For Dummies" tutorial on getting setup.  I will attempt to explain at least a a high level everything (what jQuery is used for being somewhat of a prime example).
 
-This project will be used to learn NodeJS.  Target audience is developers who have used other Web Development frameworks, namely .NET MVC / API v2.  
+This project will be used to learn NodeJS.  Target audience is developers who have used other Web Development frameworks, namely .NET MVC / API v2.  In my humble opinion, many node tutorials make far to many assumptions about what the're readers know about web development and various frameworks.  For the purposes of this document, I will assume only that you have a very basic understanding of web development and are reasonably comfortable with Javascript.  I will do my best to explain anything that falls outside of those two pre-requisites to explain (sometimes over explain) other concepts and frameworks.  I will also inevitably end up repeating the fact that I am intentionaly over explaining things, particularly when I have to ask myself "would a beginner be expected to know what I'm talking about" 
 
 This project will grow in complexity as new techniques are incorporated.  The idea is to start with the most trivial examples using as few dependencies as possible and expand from there.  As a result, many instructions for installing dependencies will happen later in the development process than they would for a more seasoned Node developer.  
 
@@ -47,6 +47,12 @@ __A note on the paramaters__
 The `i` paramater installs the target package to a newly created folder _node_modules_ which will contain all of your future dependencies.  
 
 The `--save` paramater adds this dependency to your packages.json file's dependencies section.  This will allow you to use the command `nmp install` to install in any dependencies you have previously saved, without having to commit the files in `node_modules` to your repository. 
+
+You will occasionally need to install dependencies that will only be used for development, and not needed in production.  To save such a dependency you would use `--save-dev` instead of `--save`
+
+Note that both install and save have abbreviations that you might come accross or prefer to use.
+`-i` is the same as `install`
+`-S` is the same as `--save`
 
 ##views directory
 Create a directory from the root of your application.
@@ -451,4 +457,58 @@ This instructs the server that whenever a GET HTTP call is made to /about, the c
  ```
  <a href="./about">About</a>
  ```
+ 
+At this point I have created a TAG of our application called 0.1.  Cloning the project at this point would give you the foundation of a simple webpage. Sections after this point will start to use specific features and dependencies that are not neccisarily suitable for every website, especially a very basic website.  
+
+# Section 5: Adding React (Bonus Section) 
+[React](https://reactjs.org/) is a javascript library designed make creating responsive web UIs easier to create and manage.  It is based on componentization and templating and allows you to render HTML dynamically based on certain values and conditions using concepts like properties and state.  But more on that later, for now we will focus on how to get it setup.  
+
+Before we start, let's make one thing perfectly clear, react.js does not require node.js nor does node.js require react.js.  However, node is a popular enviornment for react.js developers and with that in mind I have decided to include instructions on how to add react to this project and include a basic sample page built in react.  
+
+If you want to create a new node application using react for your front end there is no reason to do any of the following.  The folks who created react have a handy npm command that will setup a new node project with all of the react.js dependencies neatly added and ready to go out of the box.  However, using this sets you up with a bunch of dependencies that do god knows what, if you're a beginer to node and/or react (if you don't care skip to the end of this section to view the simple steps to setup a node application with react). 
+
+Another common theme I've come accross while learning react with respect to node is articles that say something along the lines of "install react is easy, just install this long list of dependencies and your good to go!".  While we will start this section by installing a bunch of dependencies, we will install them one at a time and I will do my best to explain in as plain of English as possible, always with the assumption that the intended audeince does not konw anythin about react.  
+
+In the spirit of assuming we are completly new to node and react as well as a desire to know more about the tool we are using,  this section will add react to our existing applicaiton and attempt to explain what dependencies we are adding, why we are adding them, and what they actually do. 
+
+## Installing React
+First we will install the base react frame work form npm.  We do this the same way we've installed other dependencies so far but using npm from the root of the project. 
+
+```
+npm install --save react
+```
+
+## Installing ReactDom
+ReactDom is a library that allows you to connect the react code that you write to the actual DOM.  Since we are assuming we don't know anything about React at the moment the best way to describe what we need this for is to think of code written in react as components that can execute javascript and render HTML that live in their own little world seperate from the rest of your webpage.  The ReactDom is the bridge between the react world and your HTML DOM that allows you to render what you've created in react onto your webpage.  
+
+Now if your thinking, DOM, components, rendering, what the hell, I just want to build a webpage!? Don't to to hung up on this section.  As we more further along we will gain a better understand of all of this.   
+
+__Note__ In older versions of react, the react dependencies contained the react DOM thus there was no seperate depenncy for ReactDom.  This can cause confusion if you are looking at examples that target older versions of React.  We will try to include examples from older versions of react that and their more up to date equivilants in order to avoid confusion.  
+
+With that long winded explination out of the way, lets install reactdom using rpm for your projects root. 
+
+```
+npm install --save react-dom
+```
+
+## Install Babel
+[Bable](https://babeljs.io/) is most simply explained as a javascript compiler.  React uses a Javascript extension called JSX and we need Bable to compile JSX into plain old javascript so the browser can actually understand our code.  The primary purpose of JSX is to include javascript variables directly into HTML markup.  We will discuss JSX and how it is used later, for now we just need to understand that JSX is an integral part of react development and Bable is the compiler that turns JSX into Javascipt.
+
+So lets go ahead and install our Babel dependency using npm from the root.  Notice that we are using the `save-dev` command instead of just `save`.  We mentioned briefly at the begining of the document that that means it won't be included as part of the production build. 
+Being that Bable is just a compiler there is no need to include it in our deployed code.  With that in mind lets add Babel.
+
+```
+npm install --save-dev babel-core
+```
+
+### Configuring Babel
+Unlike React and ReactDom, Babel is not specific to React and is maintained seperatly, unfortunatly that requires some configuration in order to get it work with react, the good news is the configuration is very straitforward.  Let's configure babel by following these steps.
+
+1. At the root directory of your project create a file named ".babelrc"
+2. Add the text `{ presets: ['react'] } ` to your .babelrc file
+
+Presets represent an array of plugins provided by Babel to be used by Babel.  'React' is one such preset that Babel provides and is all we need to configure at this point.  Elaborating any more on Bable configurations is beyond the scope of this document.  If you are interested in a further explination see below. 
+
+__Note__ There other other ways to configure Babel that may be more appropriate for different and more complex applications.  For our purposes this configuration method will work just fine and is the most simple and straight forward.  If you feel compeled to do a deeper dive into the Babel configuration process I would recommend [Babel's own Configuration Page](https://babeljs.io/docs/en/configuration)
+
 
