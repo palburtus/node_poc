@@ -471,6 +471,8 @@ Another common theme I've come accross while learning react with respect to node
 
 In the spirit of assuming we are completly new to node and react as well as a desire to know more about the tool we are using,  this section will add react to our existing applicaiton and attempt to explain what dependencies we are adding, why we are adding them, and what they actually do. 
 
+Much of the content in this next section is based on a tutorial published on [Code Academy - React Setup](https://www.codecademy.com/articles/react-setup-i)
+
 ## Installing React
 First we will install the base react frame work form npm.  We do this the same way we've installed other dependencies so far but using npm from the root of the project. 
 
