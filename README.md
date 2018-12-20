@@ -1,5 +1,5 @@
 # NodeJS POC Project
-A NodeJS project designed to learn the ins and outs of NodeJS.
+A NodeJS project designed to learn the ins and outs of NodeJS.  It is an attempt to create a "For Dummies" tutorial on getting setup.  I will attempt to explain at least a a high level everything (what jQuery is used for being somewhat of a prime example).
 
 This project will be used to learn NodeJS.  Target audience is developers who have used other Web Development frameworks, namely .NET MVC / API v2.  
 
@@ -451,4 +451,13 @@ This instructs the server that whenever a GET HTTP call is made to /about, the c
  ```
  <a href="./about">About</a>
  ```
+
+# Section 5: Adding React (Bonus Section) 
+[React](https://reactjs.org/) is a javascript library designed make creating responsive web UIs easier to create and manage.  It is based on componentization and templating and allows you to render HTML dynamically based on certain values and conditions using concepts like properties and state.  But more on that later, for now we will focus on how to get it setup.  
+
+Before we start, let's make one thing perfectly clear, react.js does not require node.js nor does node.js require react.js.  However, node is a popular enviornment for react.js developers and with that in mind I have decided to include instructions on how to add react to this project and include a basic sample page built in react.  
+
+If you want to create a new node application using react for your front end there is no reason to do any of the following.  The folks who created react have a handy npm command that will setup a new node project with all of the react.js dependencies neatly added and ready to go out of the box.  However, using this sets you up with a bunch of dependencies that do god knows what, if you're a beginer to node and/or react (if you don't care skip to the end of this section to view the simple steps to setup a node application with react).  
+
+In the spirit of assuming we are completly new to node and react as well as a desire to know more about the tool we are using,  this section will add react to our existing applicaiton and attempt to explain what dependencies we are adding, why we are adding them, and what they actually do. 
 
