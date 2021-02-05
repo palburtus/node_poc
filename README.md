@@ -1,5 +1,5 @@
-# A Simple project for creating a NodeJS and React application from scratch 
-A NodeJS project designed to learn the ins and outs of NodeJS.  This is an attempt to create a "For Dummies" tutorial on getting setup.  The reality is there are many ways to setup this simple application each of which may require a different array of dependencies.  Some of the dependencies are technically optional and I will attempt use as few as possible to start and to explain, at least a a high level, everything (what jQuery is used for being somewhat of a prime example) that gets included as a dependency in this setup.
+# A Simple project for creating a NodeJS
+A NodeJS project designed to learn the ins and outs of NodeJS.  This is an attempt to create a "For Dummies" tutorial on getting setup.  The reality is there are many ways to setup this simple application each of which may require a different list of dependencies.  Some of the dependencies are technically optional and I will attempt use as few as possible to start and to explain, at least at a high level, everything that gets included as a dependency in this setup.
 
 This project will be used to learn NodeJS.  Target audience is developers who have used other Web Development frameworks, namely .NET MVC / API v2.  In my humble opinion, many node tutorials make far too many assumptions about what they're readers know about web development and various frameworks.  For the purposes of this document, I will assume only that you have a very basic understanding of web development and are reasonably comfortable with Javascript.  I will do my best to explain anything that falls outside of those two pre-requisites to explain (sometimes over explain) other concepts and frameworks.  I will also inevitably end up repeating the fact that I am intentionaly over explaining things, particularly when I have to ask myself "would a beginner be expected to know what I'm talking about" 
 
@@ -22,7 +22,7 @@ mkdir node_poc
 cd node_poc
 ```
 
-Next we have to initialize node 
+Next we have to initialize node.js in the directory 
 
 ```
 npm init
@@ -513,7 +513,7 @@ Presets represent an array of plugins provided by Babel to be used by Babel.  'R
 __Note__ There other other ways to configure Babel that may be more appropriate for different and more complex applications.  For our purposes this configuration method will work just fine and is the most simple and straight forward.  If you feel compeled to do a deeper dive into the Babel configuration process I would recommend [Babel's own Configuration Page](https://babeljs.io/docs/en/configuration)
 
 ## Install Webpack 
-[Webpack](https://webpack.js.org/) is a robust Javascript library that does many things.  For the purposes of this project, we will install Webpack in order to bundle our files.  Put simply, Webpack allows us to organize our code and files modulerly for development and deploy them in bundles to allow web browsers to laod them as quickly and efficiently as possible.  
+[Webpack](https://webpack.js.org/) is a robust Javascript library that does many things.  For the purposes of this project, we will install Webpack in order to bundle our files.  Put simply, Webpack allows us to organize our code and files modulerly for development and deploy them in bundles to allow the web to laod them as quickly and efficiently as possible.  
 
 While many of these dependencies are technically optional, each dependency included thus far has fallen under the category of "must haves" (or at least very close).  Webpack in my admitadly limied experience just barely falls into that "must have" category of dependencies for a React/Node application.  Could you create and run an application without Webpack, yes.  Are there other 3rd party libraries that acomplish the same thing as webpack, yes again.  
 
@@ -530,6 +530,4 @@ npm install --save-dev webpack webpack-dev-server html-webpack-plugin
 
 As you can see we are actually installing three seperate dependencies.  Webpack, which I have described above, and webpack-dev-server and html-webpack-plugin.  We will need all three, see below of an explination of the other two.
 
-### Webpack Dev Server
 
-### Html Webpack Plugin
